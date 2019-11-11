@@ -5,7 +5,7 @@ cover [ECDICT](https://github.com/skywind3000/ECDICT) to [rime-easy-en](https://
 ## How to use
 
 1. install Erlang and Elixir.
-1. download ECDICT csv dict 👇🏻.
+1. download ECDICT csv dict 👇.
    ```shell
    wget https://github.com/skywind3000/ECDICT/blob/master/ecdict.csv
    ```
