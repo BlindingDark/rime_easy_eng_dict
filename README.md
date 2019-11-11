@@ -13,6 +13,7 @@ cover [ECDICT](https://github.com/skywind3000/ECDICT) to [rime-easy-en](https://
 1. cd rime_easy_eng_dict
 1. run.
    ```shell
+   mix deps.get
    mix conver ./ecdict.csv
    ```
 1. dict file will be saved in the `out` folder.
