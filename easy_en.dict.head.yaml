@@ -1,0 +1,144 @@
+# Rime dictionary
+# mim: set ts=8 sw=8 noet:
+# encoding: utf-8
+#
+# easy_en - Easy English
+#
+# BlindingDark <blindingdark@gmail.com>
+#
+# Easy English
+#
+
+---
+name: easy_en
+version: "0.1"
+sort: by_weight
+use_preset_vocabulary: false
+...
+
+a	a
+A	A
+á	a
+Á	A
+à	a
+À	A
+â	a
+Â	A
+ä	a
+Ä	A
+ă	a
+Ă	A
+ā	a
+Ā	A
+æ	ae
+Æ	AE
+b	b
+B	B
+c	c
+C	C
+ç	c
+Ç	C
+d	d
+D	D
+ð	d
+Ð	D
+e	e
+E	E
+é	e
+É	E
+è	e
+È	E
+ê	e
+Ê	E
+ë	e
+Ë	E
+ĕ	e
+Ĕ	E
+ē	e
+Ē	E
+f	f
+F	F
+g	g
+G	G
+h	h
+H	H
+i	i
+I	I
+í	i
+Í	I
+ì	i
+Ì	I
+î	i
+Î	I
+ï	i
+Ï	I
+ĭ	i
+Ĭ	I
+ī	i
+Ī	I
+j	j
+J	J
+k	k
+K	K
+l	l
+L	L
+m	m
+M	M
+n	n
+N	N
+o	o
+O	O
+ó	o
+Ó	O
+ò	o
+Ò	O
+ô	o
+Ô	O
+ö	o
+Ö	O
+ŏ	o
+Ŏ	O
+ō	o
+Ō	O
+œ	oe
+Œ	OE
+p	p
+P	P
+q	q
+Q	Q
+r	r
+R	R
+s	s
+S	S
+ß	ss
+ß	sz
+t	t
+T	T
+þ	th
+Þ	TH
+u	u
+U	U
+ú	u
+Ú	U
+ù	u
+Ù	U
+û	u
+Û	U
+ü	u
+Ü	U
+ŭ	u
+Ŭ	U
+ū	u
+Ū	U
+ű	u
+Ű	U
+v	v
+V	V
+w	w
+W	W
+x	x
+X	X
+y	y
+Y	Y
+z	z
+Z	Z
