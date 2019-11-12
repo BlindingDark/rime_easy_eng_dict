@@ -9,7 +9,7 @@ defmodule RimeDict do
     path
     |> decode()
     |> encode()
-    |> write(path, out_path)
+    |> write(out_path)
 
     out_path
   end
@@ -22,17 +22,51 @@ defmodule RimeDict do
 
   def encode(list) do
     list
-    |> Stream.map(fn %{"word" => word, "bnc" => bnc, "frq" => frq} ->
-      [word, format_code(word), frequent(bnc, frq)]
-    end)
+    |> Stream.flat_map(&format/1)
     |> CSV.encode(headers: false, separator: ?\t, delimiter: "\n")
   end
 
-  def format_code(word) do
+  def format(%{"word" => word, "bnc" => bnc, "frq" => frq}) do
+    frequent = frequent(bnc, frq)
+    sentence? = String.contains?(word, " ")
+
+    if frequent > 0 do
+      if sentence? do
+        format_sentence(word, frequent)
+      else
+        format_word(word, frequent)
+      end
+    else
+      []
+    end
+  end
+
+  def format_sentence(word, frequent) do
+    [[word, downcase(word), frequent]]
+  end
+
+  def format_word(word, frequent) do
+    [[word, downcase(word), frequent],
+     [String.capitalize(word), capitalize(word), frequent],
+     [String.upcase(word), capitalize(word), frequent]]
+  end
+
+  def reject(word) do
     word
     |> String.replace(" ", "")
     |> String.replace("'", "")
+  end
+
+  def downcase(word) do
+    word
+    |> reject()
     |> String.downcase()
+  end
+
+  def capitalize(word) do
+    word
+    |> reject()
+    |> String.capitalize()
   end
 
   def frequent(bnc, frq) do
@@ -42,20 +76,11 @@ defmodule RimeDict do
     if f == 0, do: 0, else: @max - (bnc + frq)
   end
 
-  def write(contants, from, to) do
-    count = get_count(from)
-
-    Enum.reduce(contants, 1, fn contant, now_count ->
+  def write(contants, to) do
+    Enum.each(contants, fn(contant) ->
       File.write(to, contant, [:append, :utf8])
-      ProgressBar.render(now_count, count, suffix: :count)
-      now_count + 1
+      print_contant = contant |> String.trim()
+      ProgressBar.render(0, 1, width: 0, percent: false, left: "", right: "converting | #{print_contant}")
     end)
-  end
-
-  def get_count(from) do
-    {count, 0} = System.cmd("wc", ["-l", from])
-    count = String.split(count) |> List.first() |> String.to_integer()
-    # remove head
-    count - 1
   end
 end
