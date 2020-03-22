@@ -1,6 +1,6 @@
 # RimeEasyEnglishDict
 
-cover [ECDICT](https://github.com/skywind3000/ECDICT) to [rime-easy-en](https://github.com/BlindingDark/rime-easy-en) dict.
+conver [ECDICT](https://github.com/skywind3000/ECDICT) to [rime-easy-en](https://github.com/BlindingDark/rime-easy-en) dict.
 
 ## How to use
 
