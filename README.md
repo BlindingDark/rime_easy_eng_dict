@@ -22,7 +22,7 @@ conver [ECDICT](https://github.com/skywind3000/ECDICT) to [rime-easy-en](https:/
 
 **WARNING! The output file will be too large, it will seriously affect the running speed of RIME!**
 
-By default, only the converted high-frequency words, you can convert the entire contents of the dictionary by setting environment variables.
+By default, only the high-frequency words will be converted, you can convert the entire contents of the dictionary by setting environment variable.
 
 ``` shell
 ONLY_HIGH_FREQUENCY=false mix conver ./ecdict.csv
