@@ -46,9 +46,11 @@ defmodule RimeDict do
   end
 
   def format_word(word, frequent) do
-    [[word, downcase(word), frequent],
-     [String.capitalize(word), capitalize(word), frequent],
-     [String.upcase(word), capitalize(word), frequent]]
+    [
+      [word, downcase(word), frequent],
+      [String.capitalize(word), capitalize(word), frequent],
+      [String.upcase(word), capitalize(word), frequent]
+    ]
   end
 
   def reject(word) do
@@ -77,10 +79,16 @@ defmodule RimeDict do
   end
 
   def write(contants, to) do
-    Enum.each(contants, fn(contant) ->
-      File.write(to, contant, [:append, :utf8])
+    Enum.each(contants, fn contant ->
+      File.write!(to, contant, [:append, :utf8])
       print_contant = contant |> String.trim()
-      ProgressBar.render(0, 1, width: 0, percent: false, left: "", right: "converting | #{print_contant}")
+
+      ProgressBar.render(0, 1,
+        width: 0,
+        percent: false,
+        left: "",
+        right: "converting | #{print_contant}"
+      )
     end)
   end
 end
