@@ -30,7 +30,7 @@ defmodule RimeDict do
     frequent = frequent(bnc, frq)
     sentence? = String.contains?(word, " ")
 
-    if frequent > 0 do
+    if pick_out?(frequent) do
       if sentence? do
         format_sentence(word, frequent)
       else
@@ -39,6 +39,11 @@ defmodule RimeDict do
     else
       []
     end
+  end
+
+  def pick_out?(frequent) do
+    "false" == System.get_env("ONLY_HIGH_FREQUENCY") ||
+      frequent > 0
   end
 
   def format_sentence(word, frequent) do
@@ -90,5 +95,7 @@ defmodule RimeDict do
         right: "converting | #{print_contant}"
       )
     end)
+
+    IO.puts("\nDone!")
   end
 end

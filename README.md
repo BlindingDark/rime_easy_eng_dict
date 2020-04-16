@@ -17,3 +17,13 @@ conver [ECDICT](https://github.com/skywind3000/ECDICT) to [rime-easy-en](https:/
    mix conver ./ecdict.csv
    ```
 1. dict file will be saved in the `out` folder.
+
+## Convert all content
+
+**WARNING! The output file will be too large to seriously affect the running speed of RIME!**
+
+By default, only the converted high-frequency words, you can convert the entire contents of the dictionary by setting environment variables.
+
+``` shell
+ONLY_HIGH_FREQUENCY=false mix conver ./ecdict.csv
+```
