@@ -7,7 +7,7 @@ conver [ECDICT](https://github.com/skywind3000/ECDICT) to [rime-easy-en](https:/
 1. install Erlang and Elixir.
 1. download ECDICT csv dict 👇.
    ```shell
-   wget https://github.com/skywind3000/ECDICT/blob/master/ecdict.csv
+   wget https://github.com/skywind3000/ECDICT/raw/master/ecdict.csv
    ```
 1. git clone https://github.com/BlindingDark/rime_easy_eng_dict
 1. cd rime_easy_eng_dict
