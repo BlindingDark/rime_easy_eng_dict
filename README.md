@@ -18,7 +18,7 @@ conver [ECDICT](https://github.com/skywind3000/ECDICT) to [rime-easy-en](https:/
    ```
 1. dict file will be saved in the `out` folder.
 
-## Convert all content
+### Convert all content
 
 **WARNING! The output file will be too large to seriously affect the running speed of RIME!**
 
