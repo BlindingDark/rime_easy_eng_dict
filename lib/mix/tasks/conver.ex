@@ -1,5 +1,6 @@
 defmodule Mix.Tasks.Conver do
   use Mix.Task
+  require Logger
 
   @head "easy_en.dict.head.yaml"
   @out "out/easy_en.dict.yaml"
@@ -15,6 +16,8 @@ defmodule Mix.Tasks.Conver do
   def copy_head() do
     head = Path.expand(@head)
     out = Path.expand(@out)
+
+    Logger.info("Output file path: #{out}")
 
     File.copy(head, out)
 
