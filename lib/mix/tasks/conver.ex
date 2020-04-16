@@ -16,7 +16,7 @@ defmodule Mix.Tasks.Conver do
 
   def prepare_head_file() do
     head = Path.expand(@head_file)
-    File.mkdir!(@out_dir)
+    if !File.exists?(@out_dir), do: File.mkdir!(@out_dir)
     out = @out_dir |> Path.join(@out_file) |> Path.expand()
 
     Logger.info("Output file path: #{out}")
