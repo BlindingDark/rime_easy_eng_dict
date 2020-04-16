@@ -20,7 +20,7 @@ conver [ECDICT](https://github.com/skywind3000/ECDICT) to [rime-easy-en](https:/
 
 ### Convert all content
 
-**WARNING! The output file will be too large to seriously affect the running speed of RIME!**
+**WARNING! The output file will be too large, it will seriously affect the running speed of RIME!**
 
 By default, only the converted high-frequency words, you can convert the entire contents of the dictionary by setting environment variables.
 
