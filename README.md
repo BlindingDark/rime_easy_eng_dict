@@ -25,5 +25,5 @@ conver [ECDICT](https://github.com/skywind3000/ECDICT) to [rime-easy-en](https:/
 By default, only the high-frequency words will be converted, you can convert the entire contents of the dictionary by setting environment variable.
 
 ``` shell
-ONLY_HIGH_FREQUENCY=false mix conver ./ecdict.csv
+CONVERT_ALL_CONTENT=true mix conver ./ecdict.csv
 ```

@@ -30,7 +30,7 @@ defmodule RimeDict do
     frequent = frequent(bnc, frq)
     sentence? = String.contains?(word, " ")
 
-    if pick_out?(frequent) do
+    if pick_out?(frequent, word) do
       if sentence? do
         format_sentence(word, frequent)
       else
@@ -41,9 +41,13 @@ defmodule RimeDict do
     end
   end
 
-  def pick_out?(frequent) do
-    "false" == System.get_env("ONLY_HIGH_FREQUENCY") ||
-      frequent > 0
+  def pick_out?(frequent, word) do
+    word_length = String.length(word)
+    contain_digit? = String.match?(word, ~r/\d/)
+
+    "true" == System.get_env("CONVERT_ALL_CONTENT") ||
+      frequent > 0 ||
+      (word_length < 10 && !contain_digit?)
   end
 
   def format_sentence(word, frequent) do
@@ -59,9 +63,7 @@ defmodule RimeDict do
   end
 
   def reject(word) do
-    word
-    |> String.replace(" ", "")
-    |> String.replace("'", "")
+    Regex.scan(~r/\w*/, word) |> List.flatten() |> Enum.join()
   end
 
   def downcase(word) do
